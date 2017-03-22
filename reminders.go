@@ -51,7 +51,7 @@ func newReminder() {
 	}
 
 	reminder := &Name{dateString[:19], text}
-	newReminder, err := json.Marshal(&reminder)
+	newReminder, err := json.MarshalIndent(&reminder, "", "    ")
 	if err != nil {
 		log.Fatal(err)
 	}
